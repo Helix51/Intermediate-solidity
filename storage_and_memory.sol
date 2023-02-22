@@ -11,11 +11,11 @@ contract storage_memory {
     }
     
     function getNumber() public view returns (uint) {
-        return storedNumber;
+        return Number_in_storage;
     }
 //"result" stored in memory
 
-    function addNumbers(uint a, uint256 b) public pure returns (uint) {
+    function addNumbers(uint a, uint b) public pure returns (uint) {
         uint result = a + b;
         return result;
     }
