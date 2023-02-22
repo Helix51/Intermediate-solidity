@@ -6,7 +6,7 @@ contract Event {
  
     event messLog1(address sender,uint,uint );
     function test()    payable  public {
-        emit messLog1(msg.sender,msg.value,1);
+      emit messLog1(msg.sender,msg.value,1);
         
         
         
