@@ -43,11 +43,4 @@ contract Store_Transactions {
 
 
 
-
-    function withdraw2(uint _number) public payable {
-        if (balance[Store] > 0)
-            revert("Currently Wallet Is Empty");
-            balance[Store] -= _number;
-            emit Withdraw(_number);
-    }
 }
