@@ -19,7 +19,7 @@ contract Store_Transactions {
     
     }
     function pay(address _from, uint _number) public payable {
-        if(balance[_from] >= _number){
+        if (balance[_from] >= _number){
         revert("Buyer do not have enough funds for the Purchase");
         }
 
@@ -29,7 +29,7 @@ contract Store_Transactions {
     }
 
     function withdraw(uint _number) public payable {
-        require(balance[Store] > 0, "Currently Wallet Is Empty ");
+        require(balance[Store] > 0, "Currently Wallet Is Empty");
         balance[Store] -= _number;
         emit Withdraw(_number);
         
@@ -37,7 +37,17 @@ contract Store_Transactions {
     }
 
     function getBalance() public view returns(uint) {
-        return balance[Store];
         assert(Store==0xb794F5eA0ba39494cE839613fffBA74279579268);
+        return balance[Store];        
     } 
+
+
+
+
+    function withdraw2(uint _number) public payable {
+        if (balance[Store] > 0)
+            revert("Currently Wallet Is Empty");
+            balance[Store] -= _number;
+            emit Withdraw(_number);
+    }
 }
